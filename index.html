@@ -1,18 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <meta
+            name="description"
+            content="Test your knowledge of inline elements, icon alignment, and CSS Flexbox."
+        />
 
-<body>
-    start
+        <meta name="theme-color" content="#f7f0f3" />
 
-    <script src="./assets/js/main.js"></script>
-</body>
+        <title>Skill Check 009 — Inline / Align</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <header class="topbar">
+            <a class="brand" href="#">
+                <b>I<span>+</span></b>
+                SKILL<span>CHECK</span>
+            </a>
+
+            <div class="top-meta">● FRONTEND FUNDAMENTALS / 009</div>
+
+            <a
+                class="roadmap"
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                ROADMAP ↗
+            </a>
+        </header>
+
+        <main class="shell">
+            <!-- INTRO -->
+            <section id="intro" class="intro">
+                <div class="eyebrow">
+                    MODULE 009
+                    <i>CSS / ALIGNMENT</i>
+                </div>
+
+                <h1>
+                    Inline<span>/</span><br />
+                    <em>Align.</em>
+                </h1>
+
+                <p>
+                    A practical knowledge check about inline elements, icon
+                    alignment, and CSS Flexbox. Explore how small layout
+                    decisions create better interfaces.
+                </p>
+
+                <div class="intro-bottom">
+                    <div>
+                        <strong>20</strong>
+                        <small>QUESTIONS</small>
+                    </div>
+
+                    <div>
+                        <strong>~8</strong>
+                        <small>MINUTES</small>
+                    </div>
+
+                    <div>
+                        <strong>01</strong>
+                        <small>SKILL LEVEL</small>
+                    </div>
+
+                    <button id="start" class="primary">
+                        Start skill check ↗
+                    </button>
+                </div>
+            </section>
+
+            <!-- QUIZ -->
+            <section id="quiz" class="panel hidden">
+                <div class="quiz-head">
+                    <div>
+                        <small class="eyebrow"> KNOWLEDGE ASSESSMENT </small>
+
+                        <h2>Test your understanding</h2>
+                    </div>
+
+                    <strong id="number">01 / 20</strong>
+                </div>
+
+                <div class="track">
+                    <i id="bar"></i>
+                </div>
+
+                <div class="meta">
+                    <span id="kind">SINGLE CHOICE</span>
+                    <span id="answered">0 ANSWERED</span>
+                </div>
+
+                <h3 id="question"></h3>
+
+                <pre id="sample" class="sample hidden"></pre>
+
+                <p id="hint" class="hint"></p>
+
+                <div id="options" class="options"></div>
+
+                <!-- EDUCATIONAL FEEDBACK -->
+                <section
+                    id="feedback"
+                    class="feedback hidden"
+                    aria-live="polite"
+                >
+                    <div class="feedback-heading">
+                        <span id="feedbackIcon">✓</span>
+
+                        <div>
+                            <strong id="feedbackTitle"> Correct! </strong>
+
+                            <small id="feedbackSubtitle">
+                                Let's explore why.
+                            </small>
+                        </div>
+                    </div>
+
+                    <p id="feedbackExplanation"></p>
+
+                    <div class="feedback-example">
+                        <div class="example-label">PRACTICAL EXAMPLE</div>
+
+                        <pre id="feedbackCode"></pre>
+                    </div>
+
+                    <div class="learning-tip">
+                        <span>✦ DEEPER LEARNING</span>
+
+                        <p id="feedbackTip"></p>
+                    </div>
+                </section>
+
+                <div class="quiz-foot">
+                    <button id="exit" class="quiet">← Exit test</button>
+
+                    <button id="next" class="primary" disabled>
+                        Next question →
+                    </button>
+                </div>
+            </section>
+
+            <!-- RESULTS -->
+            <section id="result" class="panel hidden">
+                <small class="eyebrow"> ● ASSESSMENT COMPLETE </small>
+
+                <div class="result">
+                    <div class="ring" id="ring">
+                        <div>
+                            <strong id="percent">0%</strong>
+                            <small>YOUR SCORE</small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 id="resultTitle">Good work.</h2>
+
+                        <p id="message"></p>
+
+                        <div class="stats">
+                            <div>
+                                <b id="correct">0/20</b>
+                                <small>CORRECT</small>
+                            </div>
+
+                            <div>
+                                <b id="time">0:00</b>
+                                <small>TIME</small>
+                            </div>
+
+                            <div>
+                                <b id="best">—</b>
+                                <small>BEST SCORE</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="retry" class="primary">Try again ↻</button>
+
+                    <button id="reviewBtn" class="secondary">
+                        Review answers ↓
+                    </button>
+                </div>
+
+                <div id="review" class="review hidden"></div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer>
+                FREETIMEZP <b>•</b> LEARNING SERIES
+
+                <span> HTML / CSS / JAVASCRIPT — 009 </span>
+            </footer>
+        </main>
+
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>
